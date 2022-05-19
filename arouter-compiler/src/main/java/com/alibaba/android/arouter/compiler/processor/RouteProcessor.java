@@ -312,7 +312,7 @@ public class RouteProcessor extends BaseProcessor {
                 }
 
                 // Generate groups
-                String groupFileName = NAME_OF_GROUP + groupName;
+                String groupFileName = NAME_OF_GROUP + groupName + SEPARATOR + moduleName;
                 JavaFile.builder(PACKAGE_OF_GENERATE_FILE,
                         TypeSpec.classBuilder(groupFileName)
                                 .addJavadoc(WARNING_TIPS)
