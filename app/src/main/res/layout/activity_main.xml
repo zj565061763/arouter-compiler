@@ -7,15 +7,36 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/btn_one"
+        android:id="@+id/btn_activity_one"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="one" />
+        android:onClick="onClick"
+        android:text="activity one"
+        android:textAllCaps="false" />
 
     <Button
-        android:id="@+id/btn_two"
+        android:id="@+id/btn_activity_two"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="two" />
+        android:onClick="onClick"
+        android:text="activity two"
+        android:textAllCaps="false" />
+
+
+    <Button
+        android:id="@+id/btn_service_one"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClick"
+        android:text="service one"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btn_service_two"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClick"
+        android:text="service two"
+        android:textAllCaps="false" />
 
 </LinearLayout>
