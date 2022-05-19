@@ -330,6 +330,14 @@ public class RouteProcessor extends BaseProcessor {
             if (MapUtils.isNotEmpty(rootMap)) {
                 // Generate root meta by group name, it must be generated before root, then I can find out the class of group.
                 for (Map.Entry<String, String> entry : rootMap.entrySet()) {
+                    loadIntoMethodOfRootBuilder.addCode(
+                            "try {\n" +
+                            "    com.alibaba.android.arouter.core.LogisticsCenter.addRouteGroupDynamic($S, null);\n" +
+                            "} catch (Exception e) {\n" +
+                            "    e.printStackTrace();\n" +
+                            "}", entry.getKey()
+                    );
+                    loadIntoMethodOfRootBuilder.addStatement("");
                     loadIntoMethodOfRootBuilder.addStatement("routes.put($S, $T.class)", entry.getKey(), ClassName.get(PACKAGE_OF_GENERATE_FILE, entry.getValue()));
                 }
             }
